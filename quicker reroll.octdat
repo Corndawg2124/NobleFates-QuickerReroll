@@ -1,0 +1,39 @@
+{
+    id Oct.Story.Intro.StorySoFar
+    type PlaymakerEventDioramaScriptableConversationStep
+    eventName = ToGroup
+    state = Group
+    nextStep =
+    {
+        type LineScriptableConversationStep
+		skipCondition = <Oct.Story.Intro.SkippingOrRerolling>
+        nextStep =
+        {
+            type LineScriptableConversationStep
+            skipCondition = <Oct.Story.Intro.SkippingOrRerolling>
+            nextStep = <Oct.Story.Intro.Kingmaker>
+        }
+    }
+}
+
+{
+    id Oct.Story.Intro.Kingmaker
+    type LineScriptableConversationStep    
+	skipCondition = <Oct.Story.Intro.SkippingOrRerolling>
+    nextStep = 
+    {
+        type GrammarScriptableConversationStep
+		skipCondition = <Oct.Story.Intro.SkippingOrRerolling>
+        nextStep = 
+        {
+            type GrammarScriptableConversationStep   			
+			skipCondition = <Oct.Story.Intro.SkippingOrRerolling>
+            nextStep = 
+            {
+                type GrammarScriptableConversationStep
+                skipCondition = <Oct.Story.Intro.SkippingOrRerolling>
+                nextStep = <Oct.Story.Intro.CrownDiscovery>
+            }
+        }
+    }
+}
